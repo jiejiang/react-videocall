@@ -69,7 +69,7 @@ function initSocket(socket) {
 }
 
 module.exports.run = (config) => {
-  server.listen(config.PORT);
+  server.listen(config.PORT, '0.0.0.0');
   console.log(`Server is listening at :${config.PORT}`);
   io.listen(server, { log: true })
     .on('connection', initSocket);

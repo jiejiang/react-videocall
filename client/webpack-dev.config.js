@@ -30,7 +30,7 @@ const configs = addBaseConfig({
   },
   plugins: [
     new DefinePlugin({
-      SOCKET_HOST: JSON.stringify(`localhost:${socketConfig.PORT}`)
+      SOCKET_HOST: JSON.stringify(`192.168.1.2:${socketConfig.PORT}`)
     }),
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
@@ -42,6 +42,7 @@ const configs = addBaseConfig({
   devServer: {
     compress: true,
     port: 9000,
+    host: '0.0.0.0',
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
